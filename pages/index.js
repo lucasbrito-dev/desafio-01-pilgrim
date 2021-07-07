@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -8,7 +7,7 @@ export default function Home() {
         <title>Pilgrim</title>
         <meta name='keywords' content='audiolivros, ebooks, novidades, pilgrim, teologia' />
       </Head>
-      <h1>Bem-vindo ao Pilgrim</h1>
+      <h1>Bem-vindo à Pilgrim</h1>
     </div>
   )
 }
