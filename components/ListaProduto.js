@@ -2,11 +2,11 @@
 import produtoStyles from '../styles/Produto.module.css'
 import ItemProduto from './ItemProduto' 
 
-const ListaProduto = ({conteudos, indexConteudo}) => {
+const ListaProduto = ({categorias, indexCategoria}) => {
     return (
         <div className={produtoStyles.grid}>
-            {conteudos[indexConteudo].products.map((produto) => (
-                <ItemProduto produto={produto} />
+            {categorias[indexCategoria].products.map((produto) => (
+                <ItemProduto produto={produto} idCategoria={categorias[indexCategoria].id}/>
             ))}
         </div>
     )
