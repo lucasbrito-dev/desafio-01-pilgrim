@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import ListaProduto from '../components/ListaProduto'
 
-export default function Home({conteudos}) {
+export default function Home({categorias}) {
   return (
     <div>
       <Head>
@@ -10,18 +10,19 @@ export default function Home({conteudos}) {
         <meta name='keywords' content='audiolivros, ebooks, novidades, pilgrim, teologia' />
       </Head>
 
-      <ListaProduto conteudos={conteudos} indexConteudo={0}/>
+      <ListaProduto categorias={categorias} indexCategoria={0}/>
     </div>
   )
 }
 
 export const getStaticProps = async () => {
+  console.log("Entrando no getStaticProps...")
   const res = await fetch(`https://my-json-server.typicode.com/filipeveronezi/fake-api/categories`)
-  const conteudos = await res.json()
+  const categorias = await res.json()
 
   return {
     props: {
-      conteudos
+      categorias
     }
   }
 }
