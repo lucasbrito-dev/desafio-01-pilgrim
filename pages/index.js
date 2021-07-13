@@ -10,7 +10,16 @@ export default function Home({categorias}) {
         <meta name='keywords' content='audiolivros, ebooks, novidades, pilgrim, teologia' />
       </Head>
 
+      <h2>{categorias[0].title}</h2>
       <ListaProduto categorias={categorias} indexCategoria={0}/>
+      <h2>{categorias[1].title}</h2>
+      <ListaProduto categorias={categorias} indexCategoria={1}/>
+      <h2>{categorias[2].title}</h2>
+      <ListaProduto categorias={categorias} indexCategoria={2}/>
+      <h2>{categorias[3].title}</h2>
+      <ListaProduto categorias={categorias} indexCategoria={3}/>
+      <h2>{categorias[4].title}</h2>
+      <ListaProduto categorias={categorias} indexCategoria={4}/>
     </div>
   )
 }
