@@ -18,14 +18,11 @@ export default function Home({categorias}) {
       <ListaProduto categorias={categorias} indexCategoria={2}/>
       <h2>{categorias[3].title}</h2>
       <ListaProduto categorias={categorias} indexCategoria={3}/>
-      <h2>{categorias[4].title}</h2>
-      <ListaProduto categorias={categorias} indexCategoria={4}/>
     </div>
   )
 }
 
 export const getStaticProps = async () => {
-  console.log("Entrando no getStaticProps...")
   const res = await fetch(`https://my-json-server.typicode.com/filipeveronezi/fake-api/categories`)
   const categorias = await res.json()
 
