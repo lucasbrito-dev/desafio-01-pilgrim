@@ -10,13 +10,19 @@ export default function Home({categorias}) {
         <meta name='keywords' content='audiolivros, ebooks, novidades, pilgrim, teologia' />
       </Head>
 
+      <h2>{categorias[0].title}</h2>
       <ListaProduto categorias={categorias} indexCategoria={0}/>
+      <h2>{categorias[1].title}</h2>
+      <ListaProduto categorias={categorias} indexCategoria={1}/>
+      <h2>{categorias[2].title}</h2>
+      <ListaProduto categorias={categorias} indexCategoria={2}/>
+      <h2>{categorias[3].title}</h2>
+      <ListaProduto categorias={categorias} indexCategoria={3}/>
     </div>
   )
 }
 
 export const getStaticProps = async () => {
-  console.log("Entrando no getStaticProps...")
   const res = await fetch(`https://my-json-server.typicode.com/filipeveronezi/fake-api/categories`)
   const categorias = await res.json()
 

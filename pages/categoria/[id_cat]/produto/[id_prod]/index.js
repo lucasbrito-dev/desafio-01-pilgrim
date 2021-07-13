@@ -6,8 +6,7 @@ const Produto = ({ categoria, id_prod }) => {
     const produtosFiltrados = categoria.products.filter(produto => produto.id == id_prod)
     if(produtosFiltrados.length > 0){
         const produtoSelecionado = produtosFiltrados[0]
-        const mensagemFiltragem = produtosFiltrados.length === 1 ? "Produto (único) encontrado!" : "CUIDADO!! Id de produto duplicado. Primeiro selecionado." 
-        console.log("mensagemFiltragem: ", mensagemFiltragem)
+        const mensagemFiltragem = produtosFiltrados.length === 1 ? "Produto (único) encontrado!" : "CUIDADO!! Id de produto duplicado. Primeiro selecionado."
         return (
             <>
                 <h1>{produtoSelecionado.title}</h1>
@@ -36,7 +35,6 @@ const Produto = ({ categoria, id_prod }) => {
 }
 
 export const getStaticProps = async (context) => {
-    console.log("Entrando no getStaticProps...")
     const res = await fetch(`https://my-json-server.typicode.com/filipeveronezi/fake-api/categories/${context.params.id_cat}`)
 
     const categoria = await res.json()
@@ -50,7 +48,6 @@ export const getStaticProps = async (context) => {
 }
 
 export const getStaticPaths = async () => {
-    console.log("Entrando no getStaticPaths...")
     const res = await fetch(`https://my-json-server.typicode.com/filipeveronezi/fake-api/categories`)
 
     const categorias = await res.json()
