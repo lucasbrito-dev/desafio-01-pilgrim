@@ -3,21 +3,22 @@ import Head from 'next/head'
 import ListaProduto from '../components/ListaProduto'
 
 export default function Home({categorias}) {
+  var listasCategorias = []
+  for(var i = 0; i < categorias.length; i++){
+    listasCategorias.push(
+      <>
+        <h2>{categorias[i].title}</h2>
+        <ListaProduto categorias={categorias} indexCategoria={i}/>
+      </>
+    )
+  }
   return (
     <div>
       <Head>
         <title>The Pilgrim</title>
         <meta name='keywords' content='audiolivros, ebooks, novidades, pilgrim, teologia' />
       </Head>
-
-      <h2>{categorias[0].title}</h2>
-      <ListaProduto categorias={categorias} indexCategoria={0}/>
-      <h2>{categorias[1].title}</h2>
-      <ListaProduto categorias={categorias} indexCategoria={1}/>
-      <h2>{categorias[2].title}</h2>
-      <ListaProduto categorias={categorias} indexCategoria={2}/>
-      <h2>{categorias[3].title}</h2>
-      <ListaProduto categorias={categorias} indexCategoria={3}/>
+      {listasCategorias}
     </div>
   )
 }
