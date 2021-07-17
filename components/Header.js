@@ -1,12 +1,10 @@
-import headerStyles from '../styles/Header.module.css'
-
 const Header = () => {
     return (
         <div>
-            <h1 className={headerStyles.title}>
-                The <span>Pilgrim</span>
+            <h1 className="m-0 text-6xl" style={{lineHeight: '1.15'}}>
+                The <span className="text-blue-600 no-underline">Pilgrim</span>
             </h1>
-            <p className={headerStyles.description}>
+            <p className="text-center leading-normal text-2xl">
                 Selecione seu produto do catálogo
             </p>
         </div>

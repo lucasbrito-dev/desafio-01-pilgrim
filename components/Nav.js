@@ -1,14 +1,13 @@
 import Link from 'next/link'
-import navStyles from '../styles/Nav.module.css'
 
 const Nav = () => {
     return (
-        <nav className={navStyles.nav}>
-            <ul>
-               <li>
+        <nav className="h-12 p-2 text-white flex items-center justify-start" style={{background: '#000'}}>
+            <ul className="flex justify-center items-center" style={{listStyle: 'none'}}>
+               <li style={{margin: '5px 15px'}}>
                 <Link href='/'>Catálogo</Link>
                </li>
-               <li>
+               <li style={{margin: '5px 15px'}}>
                 <Link href='/about'>Sobre</Link>
                </li> 
             </ul>
